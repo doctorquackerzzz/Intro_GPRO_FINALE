@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\source\Intro-GPRO-FINALE\main.c">
+    <ClCompile Include="..\..\..\source\Intro_To_GPRO_FINALE\main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

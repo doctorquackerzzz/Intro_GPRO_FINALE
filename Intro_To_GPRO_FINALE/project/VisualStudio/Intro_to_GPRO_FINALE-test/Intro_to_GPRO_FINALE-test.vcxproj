@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{AA30ABD1-1E28-49B8-9BB5-DA42926F8681}</ProjectGuid>
+    <ProjectGuid>{2BB1E979-D4C6-414B-80B8-CFFE837924E0}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>IntroGPROFINALEtest</RootNamespace>
+    <RootNamespace>IntrotoGPROFINALEtest</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,7 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\source\Intro-GPRO-FINALE\main.c" />
+    <ClCompile Include="..\..\..\source\Intro_To_GPRO_FINALE\main.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
