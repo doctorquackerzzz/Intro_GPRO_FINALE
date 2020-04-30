@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{3F95919C-57BD-4381-95DF-69119075E4A4}</ProjectGuid>
+    <ProjectGuid>{9AAD1A2E-0710-475B-B1C7-104C4832F444}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>IntroToGPROFINALE</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
@@ -139,10 +139,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\source\Intro_To_GPRO_FINALE\Intro_To_GPRO_FINALE.c" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\include\Intro_To_GPRO_FINALE\Intro_To_GPRO_FINALE.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
