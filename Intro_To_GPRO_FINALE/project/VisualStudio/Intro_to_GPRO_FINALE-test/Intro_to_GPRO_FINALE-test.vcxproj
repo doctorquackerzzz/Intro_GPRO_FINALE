@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\source\Intro_To_GPRO_FINALE-Test\Game\GPRO-FW-Checkers.c" />
     <ClCompile Include="..\..\..\source\Intro_To_GPRO_FINALE-Test\main.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

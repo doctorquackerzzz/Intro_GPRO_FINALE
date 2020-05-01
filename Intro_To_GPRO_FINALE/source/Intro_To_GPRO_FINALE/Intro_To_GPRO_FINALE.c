@@ -9,16 +9,15 @@ void printPiece(int* board[], int x, int y, int height, char pieces[][2]) {
 
 	//Gets space type
 	int currentSpace = 0;
-	currentSpace = board[y * height + x];
+	currentSpace = board[y * height + x]; 
 
 	//Prints the value for that space
-	//printf(" %d ", y * height + x);
 	printf(" %c%c ", pieces[currentSpace][0], pieces[currentSpace][1]);
 
 }
 
 //Displays board based off of height and width specifications
-void displayBoard(int* board, int height, int width, char pieces[][2]){
+void displayBoard(int* board[], int height, int width, char pieces[][2]){
 
 	system("CLS"); //Clear screen to make everything look nice
 
@@ -50,4 +49,8 @@ void displayBoard(int* board, int height, int width, char pieces[][2]){
 			printf("\n\n"); //Space to make it look nice
 		}
 	}
+}
+
+void displayWin(int player) {
+	printf("Player %d Wins!!", player);
 }

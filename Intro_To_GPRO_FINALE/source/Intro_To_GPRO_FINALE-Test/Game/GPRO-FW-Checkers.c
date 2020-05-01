@@ -1,6 +1,6 @@
 
 #include <stdio.h>
-#include "Intro_To_GPRO_FINALE.h"
+#include "Intro_To_GPRO_FINALE/Intro_To_GPRO_FINALE.h"
 
 //-----------------------------------------------------------------------------
 // DECLARATIONS
@@ -69,6 +69,8 @@ void gs_checkers_userInput(gs_checkers, int); //Gets user input
 
 void gs_checkers_checkKings(gs_checkers); //Makes correct pieces into kings
 
+int gs_checkers_checkWin(gs_checkers); //Checks for win
+
 void gs_checkers_move_black(gs_checkers, int, int); //Moves Black
 
 void gs_checkers_move_white(gs_checkers, int, int); //Moves White
@@ -82,6 +84,14 @@ void gs_checkers_move_white_king(gs_checkers, int, int); //Moves White Kings
 
 int launchCheckers()
 {
+	char gs_checkers_pieces[5][2] = {
+		' ', ' ',
+		'B', 'B',
+		'W', 'W',
+		'B', 'K',
+		'W', 'K'
+	};
+
 	gs_checkers game = { 0 };
 
 	gs_checkers_reset(game);
@@ -89,7 +99,7 @@ int launchCheckers()
 	int player = 0;
 
 	do {
-		gs_checkers_displayBoard(game);
+		displayBoard(game, GS_CHECKERS_BOARD_HEIGHT, GS_CHECKERS_BOARD_WIDTH, gs_checkers_pieces);
 
 		gs_checkers_userInput(game, player);
 
@@ -103,7 +113,9 @@ int launchCheckers()
 
 	} while (gs_checkers_checkWin(game) == 0);
 
-	gs_checkers_displayBoard(game);
+	displayBoard(game, GS_CHECKERS_BOARD_HEIGHT, GS_CHECKERS_BOARD_WIDTH, gs_checkers_pieces);
+
+	displayWin(gs_checkers_checkWin(game));
 
 	system("puase");
 
@@ -171,7 +183,7 @@ void gs_checkers_userInput(gs_checkers game, int player) { //player 0 = black 1 
 
 		//Print error if needed
 		if (good == 0)
-			gs_checkers_displayError(1); //Invalid Piece Error
+			printf("ERROR: Invalid Piece");
 	} while (good == 0);//Run again if invalid piece
 
 	//Runs Move Function For Piece
@@ -202,6 +214,26 @@ void gs_checkers_checkKings(gs_checkers game) {
 	}
 }
 
+int gs_checkers_checkWin(gs_checkers game) {
+	int black = 0, white = 0;
+
+	for (int i = 0; i < GS_CHECKERS_BOARD_HEIGHT; i++) {
+		for (int j = 0; j < GS_CHECKERS_BOARD_WIDTH; j++) {
+			if (gs_checkers_getSpaceState(game, j, i) == gs_checkers_space_white)
+				white++;
+			if (gs_checkers_getSpaceState(game, j, i) == gs_checkers_space_black)
+				black++;
+		}
+	}
+
+	if (black == 0)
+		return 1;
+	else if (white == 0)
+		return 2;
+	else
+		return 0;
+}
+
 void gs_checkers_move_black(gs_checkers game, int piece_x, int piece_y) {
 	//Move info
 	int move_x, move_y;
@@ -224,7 +256,7 @@ void gs_checkers_move_black(gs_checkers game, int piece_x, int piece_y) {
 			move = gs_checkers_getSpaceState(game, move_y, move_x);
 
 			if (move != gs_checkers_space_open)
-				gs_checkers_displayError(2); //Invalid Move Error
+				printf("ERROR: Invalid Move");
 		} while (move != gs_checkers_space_open);
 
 		//Move
@@ -280,7 +312,7 @@ void gs_checkers_move_white(gs_checkers game, int piece_x, int piece_y) {
 			move = gs_checkers_getSpaceState(game, move_y, move_x);
 
 			if (move != gs_checkers_space_open)
-				gs_checkers_displayError(2); //Invalid Move Error
+				printf("ERROR: Invalid Move");
 		} while (move != gs_checkers_space_open);
 
 		//Move
@@ -339,7 +371,7 @@ void gs_checkers_move_black_king(gs_checkers game, int piece_x, int piece_y) {
 			move = gs_checkers_getSpaceState(game, move_y, move_x);
 
 			if (move != gs_checkers_space_open)
-				gs_checkers_displayError(2); //Invalid Move Error
+				printf("ERROR: Invalid Move");
 		} while (move != gs_checkers_space_open);
 
 		//Move
@@ -417,7 +449,7 @@ void gs_checkers_move_white_king(gs_checkers game, int piece_x, int piece_y) {
 			move = gs_checkers_getSpaceState(game, move_y, move_x);
 
 			if (move != gs_checkers_space_open)
-				gs_checkers_displayError(2); //Invalid Move Error
+				printf("ERROR: Invalid Move");
 		} while (move != gs_checkers_space_open);
 
 		//Move

@@ -18,5 +18,8 @@
     <ClCompile Include="..\..\..\source\Intro_To_GPRO_FINALE-Test\main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\source\Intro_To_GPRO_FINALE-Test\Game\GPRO-FW-Checkers.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
