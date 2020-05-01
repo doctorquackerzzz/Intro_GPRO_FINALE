@@ -2,13 +2,17 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+//Colin Keilbach
 
 //Prints Piece when needed
-void printPiece(int* board[], int x, int y, char pieces[][2]) {
+void printPiece(int* board[], int x, int y, int height, char pieces[][2]) {
 
+	//Gets space type
 	int currentSpace = 0;
-	currentSpace = board[3];
+	currentSpace = board[y * height + x];
 
+	//Prints the value for that space
+	//printf(" %d ", y * height + x);
 	printf(" %c%c ", pieces[currentSpace][0], pieces[currentSpace][1]);
 
 }
@@ -31,7 +35,7 @@ void displayBoard(int* board, int height, int width, char pieces[][2]){
 		for (int j = 0; j < width; j++) {
 
 			//prints space
-			printPiece(board, i, j, pieces);
+			printPiece(board, j, i, height, pieces);
 
 			if (j != width - 1) { //Line for grid
 				printf("|");
