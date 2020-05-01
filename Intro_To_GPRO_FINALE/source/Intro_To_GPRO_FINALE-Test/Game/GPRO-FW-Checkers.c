@@ -99,7 +99,7 @@ int launchCheckers()
 	int player = 0;
 
 	do {
-		displayBoard(game, GS_CHECKERS_BOARD_HEIGHT, GS_CHECKERS_BOARD_WIDTH, gs_checkers_pieces);
+		displayBoard(&game, GS_CHECKERS_BOARD_HEIGHT, GS_CHECKERS_BOARD_WIDTH, gs_checkers_pieces);
 
 		gs_checkers_userInput(game, player);
 
@@ -113,7 +113,7 @@ int launchCheckers()
 
 	} while (gs_checkers_checkWin(game) == 0);
 
-	displayBoard(game, GS_CHECKERS_BOARD_HEIGHT, GS_CHECKERS_BOARD_WIDTH, gs_checkers_pieces);
+	displayBoard(&game, GS_CHECKERS_BOARD_HEIGHT, GS_CHECKERS_BOARD_WIDTH, gs_checkers_pieces);
 
 	displayWin(gs_checkers_checkWin(game));
 

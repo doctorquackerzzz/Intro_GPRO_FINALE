@@ -5,19 +5,19 @@
 //Colin Keilbach
 
 //Prints Piece when needed
-void printPiece(int* board[], int x, int y, int height, char pieces[][2]) {
+const void printPiece(int board[], int index, char pieces[][2]) {
 
 	//Gets space type
 	int currentSpace = 0;
-	currentSpace = board[y * height + x]; 
+	currentSpace = board[index];
 
 	//Prints the value for that space
-	printf(" %c%c ", pieces[currentSpace][0], pieces[currentSpace][1]);
+ 	printf(" %c%c ", pieces[currentSpace][0], pieces[currentSpace][1]);
 
 }
 
 //Displays board based off of height and width specifications
-void displayBoard(int* board[], int height, int width, char pieces[][2]){
+const void displayBoard(int board[], int height, int width, char pieces[][2]){
 
 	system("CLS"); //Clear screen to make everything look nice
 
@@ -34,7 +34,7 @@ void displayBoard(int* board[], int height, int width, char pieces[][2]){
 		for (int j = 0; j < width; j++) {
 
 			//prints space
-			printPiece(board, j, i, height, pieces);
+			printPiece(board, (i * height + j), pieces);
 
 			if (j != width - 1) { //Line for grid
 				printf("|");
